@@ -296,7 +296,7 @@ class OverPoll(object):
                               me.sendMessage(to,"Tidak Ada kontak bot")
                             else:
                               me.sendMessage(to,"══════พร้อม══════")
-                        elif Pbot == "มา":
+                        elif Pbot == "bot":
                           if msg._from in OWNER or msg._from in meM:
                             if set["bot"] == {}:
                               me.sendMessage(to,"Tidak Ada kontak bot")
