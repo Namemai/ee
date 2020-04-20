@@ -295,11 +295,7 @@ class OverPoll(object):
                             if set["bot"] == {}:
                               me.sendMessage(to,"Tidak Ada kontak bot")
                             else:
-                              me.sendMessage(to,"═══════botlist═══════")
-                              h = ""
-                              for i in set["bot"]:
-                                h = me.getContact(i)
-                                me.sendContact(to,i)
+                              me.sendMessage(to,"══════พร้อม══════")
                         elif Pbot == "in":
                           if msg._from in OWNER or msg._from in meM:
                             if set["bot"] == {}:
@@ -309,7 +305,7 @@ class OverPoll(object):
                         elif Pbot == "out":
                           if msg._from in OWNER or msg._from in meM:
                             if set["bot"] == {}:
-                              me.leaveGroup(to,set["bot"])
+                              me.leaveGroup(to)
                         elif Pbot == "channel":
                             me.sendMessage(to, "Waiting...")
                             search = "PrankBots"
