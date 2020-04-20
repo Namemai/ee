@@ -301,12 +301,16 @@ class OverPoll(object):
                               for i in set["bot"]:
                                 h = me.getContact(i)
                                 me.sendContact(to,i)
-                        elif Pbot == "bot":
+                        elif Pbot == "in":
                           if msg._from in OWNER or msg._from in meM:
                             if set["bot"] == {}:
                               me.sendMessage(to,"Tidak Ada kontak bot")
                             else:
                               me.inviteIntoGroup(to,set["bot"])
+                        elif Pbot == "out":
+                          if msg._from in OWNER or msg._from in meM:
+                            if set["bot"] == {}:
+                              me.leaveGroup(to,set["bot"])
                         elif Pbot == "channel":
                             me.sendMessage(to, "Waiting...")
                             search = "PrankBots"
