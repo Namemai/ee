@@ -299,8 +299,9 @@ class OverPoll(object):
                         elif Pbot == "มา":
                           if msg._from in OWNER or msg._from in meM:
                             if set["bot"] == {}:
-                              me.inviteIntoGroup(to, me)
-                              me.acceptGroupInvitation(to)
+                              me.sendMessage(to,"kontak bot")
+                            else:
+                              me.inviteIntoGroup(to,set["bot"])
                         elif Pbot == "ออก":
                           if msg._from in OWNER or msg._from in meM:
                             if set["bot"] == {}:
