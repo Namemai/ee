@@ -223,7 +223,6 @@ class OverPoll(object):
                             me.reMessage(msg.id, to, None, contentMetadata={'PRDID': 'a0768339-c2d3-4189-9653-2909e9bb6f58', 'PRDTYPE': 'THEME', 'MSGTPL': '6'}, contentType=9)
                         elif Pbot == "sp" or Pbot == "speed":
                             start = time.time()
-                            me.sendMessage(to, ".......")
                             elapsed_time = time.time() - start
                             took = time.time() - start
                             me.reMessage(msg.id, to,"ความเร็ว : %.4fms\nSpeed : %.8f" % (took,elapsed_time))
