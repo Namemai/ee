@@ -186,7 +186,7 @@ class OverPoll(object):
                                 me.sendMessage(to,"anda tidak memiliki foto profile\nTERCYDUK BAPER")
                         if Pbot == "pk":
                             me.reMessage(msg.id, to, "CEK DAFTAR PERANGKAT KAMU\nline://nv/connectedDevices/")
-                        if Pbot == "#reboot":
+                        if Pbot == "รี":
                           if msg._from in OWNER or msg._from in meM:
                             me.reMessage(msg.id, to, "ngges.!!")
                             set["restartPoint"] = to
