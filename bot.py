@@ -14,7 +14,44 @@ from humanfriendly import format_timespan, format_size, format_number, format_le
 import time, random, sys, json, codecs, threading, glob, re, string, os, requests, subprocess, six, ast, urllib, urllib.parse,youtube_dl,pafy,timeit,atexit,traceback,ffmpy,humanize
 from googletrans import Translator
 _session = requests.session()
-botStart = time.time()
+Bot_startTime = time.strftime("%H:%M:%S", time.localtime())
+# Login line
+print("""
+\033["""+str(randint(0,1))+""";"""+str(randint(31,36))+"""m[ %s Start Bot ]\033[0m    
+"""%(Bot_startTime))
+#==============================================================
+cl = LINE("ytv47663@bcaoo.com","mai065558mai")
+print("""\033["""+str(randint(0,1))+""";"""+str(randint(31,36))+"""m[ %s Selfbot Login ]\033[0m"""%(Bot_startTime))
+
+k1 = LINE("oqt64130@eoopy.com","mai065558mai")
+print("""\033["""+str(randint(0,1))+""";"""+str(randint(31,36))+"""m[ %s Asist1 Login ]\033[0m"""%(Bot_startTime))
+
+k2 = LINE("ago06104@zzrgg.com","mai065558mai")
+print("""\033["""+str(randint(0,1))+""";"""+str(randint(31,36))+"""m[ %s Asist2 Login ]\033[0m"""%(Bot_startTime))
+
+k3 = LINE("tlm27566@bcaoo.com","mai065558mai")
+print("""\033["""+str(randint(0,1))+""";"""+str(randint(31,36))+"""m[ %s Asist3 Login ]\033[0m"""%(Bot_startTime))
+
+k4 = LINE("vsz71687@eoopy.com","mai065558mai")
+print("""\033["""+str(randint(0,1))+""";"""+str(randint(31,36))+"""m[ %s Asist4 Login ]\033[0m"""%(Bot_startTime))
+
+k5 = LINE("yel10184@bcaoo.com","mai065558mai")
+print("""\033["""+str(randint(0,1))+""";"""+str(randint(31,36))+"""m[ %s Asist5 Login ]\033[0m"""%(Bot_startTime))
+
+k6 = LINE("mhh87894@zzrgg.com","mai065558mai")
+print("""\033["""+str(randint(0,1))+""";"""+str(randint(31,36))+"""m[ %s Asist6 Login ]\033[0m"""%(Bot_startTime))
+
+k7 = LINE("qij17520@zzrgg.com","mai065558mai")
+print("""\033["""+str(randint(0,1))+""";"""+str(randint(31,36))+"""m[ %s Asist7 Login ]\033[0m"""%(Bot_startTime))
+
+k8 = LINE("hbp07791@eoopy.com","mai065558mai")
+print("""\033["""+str(randint(0,1))+""";"""+str(randint(31,36))+"""m[ %s Asist8 Login ]\033[0m"""%(Bot_startTime))
+
+#==========================[[PAKE TOKEN CHROMEOS 2.1.5]]=========================
+print("""\033["""+str(randint(0,1))+""";"""+str(randint(31,36))+"""m
+	    Welcome To Self Bot Protect  By mai
+            
+Login Time %s \033[0m\n\n"""%(Bot_startTime))
 OWNER = "u02b175e62fb53fd8547e712148e1d510"
 try:
     with open("temp.json","r",encoding="utf_8_sig") as f:
