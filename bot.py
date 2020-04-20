@@ -15,7 +15,7 @@ import time, random, sys, json, codecs, threading, glob, re, string, os, request
 from googletrans import Translator
 _session = requests.session()
 botStart = time.time()
-OWNER = "u02b175e62fb53fd8547e712148e1d510"
+OWNER = "u02b175e62fb53fd8547e712148e1d510","u4d2c07fb11d6ce7aabf9ec804b8c7c7e"
 try:
     with open("temp.json","r",encoding="utf_8_sig") as f:
         set = json.loads(f.read())
