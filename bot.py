@@ -15,18 +15,7 @@ import time, random, sys, json, codecs, threading, glob, re, string, os, request
 from googletrans import Translator
 _session = requests.session()
 botStart = time.time()
-
-threading.Thread(target=login, args=("EQv0K3MBU1J8aOLFEj4a.6YAlxRoBiuWsWmMO3zlrsG.1MleXLGOCUa3F+aIniAEtxmj8Jrba8CUgd+0Tw5B2T8=")).start()
-threading.Thread(target=login, args=("EQ2PdhUNoUiVwtGo0aR9.ZuiY4NJ7RVhq5MYUQZC8gq.CWQOkullBgG2b45ATw1m/TmpUVQaZKPdLjeWBYeOqX8=")).start()
-threading.Thread(target=login, args=("EQQ7DuSX6swy9bbbHvy9.NZRizCD1AxS0Y7UngEhsUq.M6d/jVv9M4LWuhO3Be8+G67b/njPb0RHmVF5ypfViog=")).start()
-threading.Thread(target=login, args=("EQoQm7OYBcsXTHIrZhka.c9LmlsiyQRgzhUGlZNb/EG.oNZV1xyL293yqTXtt656aTiYSSZ5sLM18K9DUwEP5Ts=")).start()
-threading.Thread(target=login, args=("EQgrtWDAYYnqyYOay8R4.spUm8672KnRV8OpyEW085a.WpWZr7v4O8MP0nWZU3Xu8gwzxZuw+L9ot1c1jEaoC9s=")).start()
-threading.Thread(target=login, args=("EQQ7ojPkMnAjhNwbeq87.9JP173BZR7RvIhsxJxLFrW.44GIkRLLzhCGDHBKZsYU9+h8Lnig/wBKPcgF7sU/YpI=")).start()
-threading.Thread(target=login, args=("EQCUW6B14AU6IXSdqvKd.BhBt2iou452EqQ0WX2tgxq.NRcdWXEFOs6vsto5jg5aMcHAG9D8BIIjw4xxWKLJYmw=")).start()
-threading.Thread(target=login, args=("EQgjwR6y0dwvXWw6MhC9.D8a7trU8qYHeMP9wgPk56q.VW2pUJdF+7nFCTfYSMRkQ7KgdowuG4YvTk4uS3Zo9nI=")).start()
-threading.Thread(target=login, args=("EQtdUVBo0bnUuUUlP2Oe.IgXDmaTHkrYL1znDJ1xypG.j+CiLP5V4dNtW8cs35ngBA+2gvVnLenVIRX5Yn71nCw=")).start()
-print("USER LOGIN SUCCES.!!")
-OWNER = "u02b175e62fb53fd8547e712148e1d510"
+OWNER = "u0ac948397fbc732bd3bc5ca273faa698"
 try:
     with open("temp.json","r",encoding="utf_8_sig") as f:
         set = json.loads(f.read())
@@ -145,14 +134,14 @@ class OverPoll(object):
                     else:
                         Pbot = text.lower()
                         if Pbot == "help":
-                            zxz = "╔ คำสั่ง "
+                            zxz = "╔HELP PUB"
                             zxz += "\n╠Me"
                             zxz += "\n╠Myprofile"
                             zxz += "\n╠Prangkat"
                             zxz += "\n╠Mid"
                             zxz += "\n╠Creator/admin"
                             zxz += "\n╠Gift"
-                            zxz += "\n╠Sp"
+                            zxz += "\n╠Speed"
                             zxz += "\n╠Channel"
                             zxz += "\n╚═════════"
                             me.reMessage(msg.id, to, zxz)
@@ -161,22 +150,22 @@ class OverPoll(object):
                             zxz = "╔SELF & ADMIN"
                             zxz += "\n╠Me"
                             zxz += "\n╠Myprofile"
-                            zxz += "\n╠Pk"
-                            zxz += "\n╠รี"
+                            zxz += "\n╠Prangkat"
+                            zxz += "\n╠#Reboot"
                             zxz += "\n╠Botinfo"
                             zxz += "\n╠Mid"
                             zxz += "\n╠Creator/admin"
                             zxz += "\n╠Gift"
                             zxz += "\n╠Speed"
                             zxz += "\n╠Channel"
-                            zxz += "\n╠bk @"
+                            zxz += "\n╠Kick @"
                             zxz += "\n╠Addbot @"
                             zxz += "\n╠Delbot @"
                             zxz += "\n╠botlist"
-                            zxz += "\n╠bc"
+                            zxz += "\n╠Banlist"
                             zxz += "\n╠Clearbot"
-                            zxz += "\n╠cb"
-                            zxz += "\n╠in [to invite]"
+                            zxz += "\n╠Clearban"
+                            zxz += "\n╠Bot [to invite]"
                             zxz += "\n╚═════════"
                             me.reMessage(msg.id, to, zxz)
                         if Pbot == "me":
@@ -195,9 +184,9 @@ class OverPoll(object):
                             except:
                                 me.reMessage(msg.id, to, result)
                                 me.sendMessage(to,"anda tidak memiliki foto profile\nTERCYDUK BAPER")
-                        if Pbot == "pk":
+                        if Pbot == "perangkat":
                             me.reMessage(msg.id, to, "CEK DAFTAR PERANGKAT KAMU\nline://nv/connectedDevices/")
-                        if Pbot == "รี":
+                        if Pbot == "#reboot":
                           if msg._from in OWNER or msg._from in meM:
                             me.reMessage(msg.id, to, "ngges.!!")
                             set["restartPoint"] = to
@@ -238,7 +227,7 @@ class OverPoll(object):
                             elapsed_time = time.time() - start
                             took = time.time() - start
                             me.reMessage(msg.id, to,"mencret : %.4fms\nSpeed respon: %.8f" % (took,elapsed_time))
-                        elif Pbot.startswith("bk "):
+                        elif Pbot.startswith("kick "):
                           if msg._from in OWNER or msg._from in meM:
                             if 'MENTION' in msg.contentMetadata.keys()!= None:
                               names = re.findall(r'@(\w+)', text)
@@ -288,11 +277,11 @@ class OverPoll(object):
                           if msg._from in OWNER or msg._from in meM:
                             me.sendMessage(to,"DAFTAR[%s] BOT\n[success deleted]" % (str(len(set["bot"]))))
                             set["bot"] = {}
-                        elif Pbot == "cb":
+                        elif Pbot == "clearban":
                           if msg._from in OWNER or msg._from in meM:
                             me.sendMessage(to,"DAFTAR[%s] BAN\n[success deleted]" % (str(len(set["ban"]))))
                             set["ban"] = {}
-                        elif Pbot == "bc":
+                        elif Pbot == "banlist":
                           if msg._from in OWNER or msg._from in meM:
                             if set["ban"] == {}:
                               me.sendMessage(to,"Tidak Ada kontak blacklist")
@@ -312,7 +301,7 @@ class OverPoll(object):
                               for i in set["bot"]:
                                 h = me.getContact(i)
                                 me.sendContact(to,i)
-                        elif Pbot == "in":
+                        elif Pbot == "bot":
                           if msg._from in OWNER or msg._from in meM:
                             if set["bot"] == {}:
                               me.sendMessage(to,"Tidak Ada kontak bot")
