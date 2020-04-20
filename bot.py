@@ -105,7 +105,6 @@ class OverPoll(object):
               try:
                 me.kickoutFromGroup(op.param1,[op.param2])
                 me.inviteIntoGroup(op.param1,[op.param3])
-                me.cancelGroupInvitation(op.param1,[taged])
               except:pass
         if op.type == 13:
           if meM in op.param3:
@@ -306,19 +305,9 @@ class OverPoll(object):
                         elif Pbot == "ออก":
                           if msg._from in OWNER or msg._from in meM:
                             if set["bot"] == {}:
-                              me.leaveGroup(to)
-                        elif Pbot == "in":
-                          if msg._from in OWNER or msg._from in meM:
-                            if set["bot"] == {}:
-                              G = me.getGroup(to)
-                              G.preventedJoinByTicket = False
-                              me.updateGroup(G)
-                              invsend = 0                        
-                              ticket = me.reissueGroupTicket(to)
-                              me.acceptGroupInvitationByTicket(to,format(str(ticket)))
-                              G = me.getGroup(to)
-                              G.preventedJoinByTicket = True
-                              me.updateGroup(G)
+                              me.sendMessage(to,"บอทออก")
+                            else:
+                              me.leaveGroup(to,set["bot"])
                         elif Pbot == "channel":
                             me.sendMessage(to, "Waiting...")
                             search = "PrankBots"
