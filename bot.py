@@ -105,13 +105,12 @@ class OverPoll(object):
               try:
                 me.kickoutFromGroup(op.param1,[op.param2])
                 me.inviteIntoGroup(op.param1,[op.param3])
-                me.kickoutFromGroup(op.param1,[op.param2])
+                me.cancelGroupInvitation(op.param1,[taged])
               except:pass
         if op.type == 13:
           if meM in op.param3:
             if op.param2 in set["bot"] or op.param2 in OWNER:
               me.acceptGroupInvitation(op.param1)
-              me.cancelGroupInvitation(op.param1,[taged])
             else:pass
         if op.type == 26 or op.type == 25:
             msg = op.message
@@ -224,6 +223,7 @@ class OverPoll(object):
                         elif Pbot == "gift":
                             me.reMessage(msg.id, to, None, contentMetadata={'PRDID': 'a0768339-c2d3-4189-9653-2909e9bb6f58', 'PRDTYPE': 'THEME', 'MSGTPL': '6'}, contentType=9)
                         elif Pbot == "sp" or Pbot == "speed":
+                            start = time.time()
                             elapsed_time = time.time() - start
                             took = time.time() - start
                             me.reMessage(msg.id, to,"ความเร็ว : %.4fms\nSpeed : %.8f" % (took,elapsed_time))
@@ -297,16 +297,28 @@ class OverPoll(object):
                               me.sendMessage(to,"Tidak Ada kontak bot")
                             else:
                               me.sendMessage(to,"══════พร้อม══════")
-                        elif Pbot == "in":
+                        elif Pbot == "มา":
                           if msg._from in OWNER or msg._from in meM:
                             if set["bot"] == {}:
                               me.sendMessage(to,"Tidak Ada kontak bot")
                             else:
-                              me.inviteIntoGroup(to)
-                        elif Pbot == "out":
+                              me.inviteIntoGroup(to,set["bot"])
+                        elif Pbot == "ออก":
                           if msg._from in OWNER or msg._from in meM:
                             if set["bot"] == {}:
                               me.leaveGroup(to)
+                        elif Pbot == "in":
+                          if msg._from in OWNER or msg._from in meM:
+                            if set["bot"] == {}:
+                              G = me.getGroup(to)
+                              G.preventedJoinByTicket = False
+                              me.updateGroup(G)
+                              invsend = 0                        
+                              ticket = me.reissueGroupTicket(to)
+                              me.acceptGroupInvitationByTicket(to,format(str(ticket)))
+                              G = me.getGroup(to)
+                              G.preventedJoinByTicket = True
+                              me.updateGroup(G)
                         elif Pbot == "channel":
                             me.sendMessage(to, "Waiting...")
                             search = "PrankBots"
