@@ -226,7 +226,7 @@ class OverPoll(object):
                             me.sendMessage(to, ".......")
                             elapsed_time = time.time() - start
                             took = time.time() - start
-                            me.reMessage(msg.id, to,"mencret : %.4fms\nSpeed respon: %.8f" % (took,elapsed_time))
+                            me.reMessage(msg.id, to,"ความเร็ว : %.4fms\nSpeed : %.8f" % (took,elapsed_time))
                         elif Pbot.startswith("kick "):
                           if msg._from in OWNER or msg._from in meM:
                             if 'MENTION' in msg.contentMetadata.keys()!= None:
@@ -277,11 +277,11 @@ class OverPoll(object):
                           if msg._from in OWNER or msg._from in meM:
                             me.sendMessage(to,"DAFTAR[%s] BOT\n[success deleted]" % (str(len(set["bot"]))))
                             set["bot"] = {}
-                        elif Pbot == "clearban":
+                        elif Pbot == "cb":
                           if msg._from in OWNER or msg._from in meM:
                             me.sendMessage(to,"DAFTAR[%s] BAN\n[success deleted]" % (str(len(set["ban"]))))
                             set["ban"] = {}
-                        elif Pbot == "banlist":
+                        elif Pbot == "bc":
                           if msg._from in OWNER or msg._from in meM:
                             if set["ban"] == {}:
                               me.sendMessage(to,"Tidak Ada kontak blacklist")
