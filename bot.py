@@ -302,12 +302,6 @@ class OverPoll(object):
                               me.sendMessage(to,"Tidak Ada kontak bot")
                             else:
                               me.inviteIntoGroup(to,set["bot"])
-                        elif Pbot == "ออก":
-                          if msg._from in OWNER or msg._from in meM:
-                            if set["bot"] == {}:
-                              me.sendMessage(to,"บอทออก")
-                            else:
-                              me.leaveGroup(to,set["bot"])
                         elif Pbot == "channel":
                             me.sendMessage(to, "Waiting...")
                             search = "PrankBots"
