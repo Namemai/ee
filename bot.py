@@ -76,7 +76,7 @@ class OverPoll(object):
         if op.type == 0:
             return
         if op.type == 5:
-            icone = ("1","2","3","4","5","6","7")
+            icone = ("1","2","3","4","5","6","7","8","9","10","11","12")
             stgift = random.choice(icone)
             icont = ("2ec7c3ad-2257-4b6d-bf8a-9e676fa18239","eb0949bf-c2ef-4fe1-8bec-149d8a46a44d","03de6834-ffdb-4d87-bcd7-853d3e4ec2ac","29568287-d858-44e7-b254-0558cad97933","25e24851-994d-4636-9463-597387ec7b73","02d85080-6b81-448d-9ecb-b8c72cde3561","eb2f8450-e1ae-4846-940d-bac85cf31244","6c3a8150-58c7-4a87-85e8-617b4ef25daa")
             giftst = random.choice(icont)
@@ -93,7 +93,7 @@ class OverPoll(object):
               g.preventedJoinByTicket = True
               me.updateGroup(g)
               try:
-                me.sendMessage(op.param1,"sorry...\ncontact in blacklist")
+                me.sendMessage(op.param1,"blacklist")
                 me.kickoutFromGroup(op.param1,[op.param3])
               except:pass
         if op.type == 19 or op.type == 32:
@@ -105,11 +105,13 @@ class OverPoll(object):
               try:
                 me.kickoutFromGroup(op.param1,[op.param2])
                 me.inviteIntoGroup(op.param1,[op.param3])
+                me.acceptGroupInvitation(op.param1)
               except:pass
         if op.type == 13:
           if meM in op.param3:
             if op.param2 in set["bot"] or op.param2 in OWNER:
               me.acceptGroupInvitation(op.param1)
+              me.cancelGroupInvitation(op.param1,[taged])
             else:pass
         if op.type == 26 or op.type == 25:
             msg = op.message
@@ -134,42 +136,42 @@ class OverPoll(object):
                     else:
                         Pbot = text.lower()
                         if Pbot == "help":
-                            zxz = "╔HELP PUB"
+                            zxz = "╔คำสั่ง"
                             zxz += "\n╠Me"
                             zxz += "\n╠Myprofile"
-                            zxz += "\n╠Prangkat"
+                            zxz += "\n╠ระบบ"
                             zxz += "\n╠Mid"
                             zxz += "\n╠Creator/admin"
                             zxz += "\n╠Gift"
                             zxz += "\n╠Speed"
-                            zxz += "\n╠Channel"
+                            zxz += "\n╠out"
                             zxz += "\n╚═════════"
                             me.reMessage(msg.id, to, zxz)
                         if Pbot == "myhelp":
                           if msg._from in OWNER or msg._from in meM:
-                            zxz = "╔SELF & ADMIN"
+                            zxz = "╔ & ADMIN"
                             zxz += "\n╠Me"
                             zxz += "\n╠Myprofile"
-                            zxz += "\n╠Prangkat"
-                            zxz += "\n╠#Reboot"
+                            zxz += "\n╠ระบบ"
+                            zxz += "\n╠#รี"
                             zxz += "\n╠Botinfo"
                             zxz += "\n╠Mid"
                             zxz += "\n╠Creator/admin"
                             zxz += "\n╠Gift"
                             zxz += "\n╠Speed"
                             zxz += "\n╠Channel"
-                            zxz += "\n╠Kick @"
+                            zxz += "\n╠ิbk @"
                             zxz += "\n╠Addbot @"
                             zxz += "\n╠Delbot @"
                             zxz += "\n╠botlist"
-                            zxz += "\n╠Banlist"
+                            zxz += "\n╠Bc"
                             zxz += "\n╠Clearbot"
-                            zxz += "\n╠Clearban"
-                            zxz += "\n╠Bot [to invite]"
+                            zxz += "\n╠Cb"
+                            zxz += "\n╠in [to invite]"
                             zxz += "\n╚═════════"
                             me.reMessage(msg.id, to, zxz)
                         if Pbot == "me":
-                            contentMetadata={'previewUrl': "http://dl.profile.line-cdn.net/"+me.getContact(msg._from).picturePath, 'i-installUrl': 'http://itunes.apple.com/app/linemusic/id966142320', 'type': 'mt', 'subText': me.getContact(msg._from).statusMessage if me.getContact(msg._from).statusMessage != '' else 'creator By PrankBots |ID LINE|\nadiputra.95', 'a-installUrl': 'market://details?id=jp.linecorp.linemusic.android', 'a-packageName': 'jp.linecorp.linemusic.android', 'countryCode': 'JP', 'a-linkUri': 'linemusic://open?target=track&item=mb00000000016197ea&subitem=mt000000000d69e2db&cc=JP&from=lc&v=1', 'i-linkUri': 'linemusic://open?target=track&item=mb00000000016197ea&subitem=mt000000000d69e2db&cc=JP&from=lc&v=1', 'text': me.getContact(msg._from).displayName, 'id': 'mt000000000d69e2db', 'linkUri': 'https://music.me.me/launch?target=track&item=mb00000000016197ea&subitem=mt000000000d69e2db&cc=JP&from=lc&v=1','MSG_SENDER_ICON': "https://os.line.naver.jp/os/p/"+msg._from,'MSG_SENDER_NAME':  me.getContact(msg._from).displayName,}
+                            contentMetadata={'previewUrl': "http://dl.profile.line-cdn.net/"+me.getContact(msg._from).picturePath, 'i-installUrl': 'http://itunes.apple.com/app/linemusic/id966142320', 'type': 'mt', 'subText': me.getContact(msg._from).statusMessage if me.getContact(msg._from).statusMessage != '' else 'By Mai|ID mai06555mai|\nadiputra.95', 'a-installUrl': 'market://details?id=jp.linecorp.linemusic.android', 'a-packageName': 'jp.linecorp.linemusic.android', 'countryCode': 'JP', 'a-linkUri': 'linemusic://open?target=track&item=mb00000000016197ea&subitem=mt000000000d69e2db&cc=JP&from=lc&v=1', 'i-linkUri': 'linemusic://open?target=track&item=mb00000000016197ea&subitem=mt000000000d69e2db&cc=JP&from=lc&v=1', 'text': me.getContact(msg._from).displayName, 'id': 'mt000000000d69e2db', 'linkUri': 'https://music.me.me/launch?target=track&item=mb00000000016197ea&subitem=mt000000000d69e2db&cc=JP&from=lc&v=1','MSG_SENDER_ICON': "https://os.line.naver.jp/os/p/"+msg._from,'MSG_SENDER_NAME':  me.getContact(msg._from).displayName,}
                             me.reMessage(msg.id, to, me.getContact(msg._from).displayName, contentMetadata, 19)
                         if Pbot == "myprofile":
                             contact = me.getContact(msg._from)
@@ -184,11 +186,11 @@ class OverPoll(object):
                             except:
                                 me.reMessage(msg.id, to, result)
                                 me.sendMessage(to,"anda tidak memiliki foto profile\nTERCYDUK BAPER")
-                        if Pbot == "perangkat":
-                            me.reMessage(msg.id, to, "CEK DAFTAR PERANGKAT KAMU\nline://nv/connectedDevices/")
-                        if Pbot == "#reboot":
+                        if Pbot == "ระบบ":
+                            me.reMessage(msg.id, to, "กดลิ้งเพื่อออกระบบ\nline://nv/connectedDevices/")
+                        if Pbot == "#รี":
                           if msg._from in OWNER or msg._from in meM:
-                            me.reMessage(msg.id, to, "ngges.!!")
+                            me.reMessage(msg.id, to, "กำลังรีระบบ.!!")
                             set["restartPoint"] = to
                             restartBot()
                         elif Pbot == "botinfo":
@@ -223,11 +225,10 @@ class OverPoll(object):
                             me.reMessage(msg.id, to, None, contentMetadata={'PRDID': 'a0768339-c2d3-4189-9653-2909e9bb6f58', 'PRDTYPE': 'THEME', 'MSGTPL': '6'}, contentType=9)
                         elif Pbot == "sp" or Pbot == "speed":
                             start = time.time()
-                            me.sendMessage(to, ".......")
                             elapsed_time = time.time() - start
                             took = time.time() - start
-                            me.reMessage(msg.id, to,"mencret : %.4fms\nSpeed respon: %.8f" % (took,elapsed_time))
-                        elif Pbot.startswith("kick "):
+                            me.reMessage(msg.id, to,"สปีด : %.4fms\nSpeed : %.8f" % (took,elapsed_time))
+                        elif Pbot.startswith("bk "):
                           if msg._from in OWNER or msg._from in meM:
                             if 'MENTION' in msg.contentMetadata.keys()!= None:
                               names = re.findall(r'@(\w+)', text)
@@ -277,16 +278,15 @@ class OverPoll(object):
                           if msg._from in OWNER or msg._from in meM:
                             me.sendMessage(to,"DAFTAR[%s] BOT\n[success deleted]" % (str(len(set["bot"]))))
                             set["bot"] = {}
-                        elif Pbot == "clearban":
+                        elif Pbot == "cb":
                           if msg._from in OWNER or msg._from in meM:
                             me.sendMessage(to,"DAFTAR[%s] BAN\n[success deleted]" % (str(len(set["ban"]))))
                             set["ban"] = {}
-                        elif Pbot == "banlist":
+                        elif Pbot == "bc":
                           if msg._from in OWNER or msg._from in meM:
                             if set["ban"] == {}:
                               me.sendMessage(to,"Tidak Ada kontak blacklist")
                             else:
-                              me.sendMessage(to,"═══════blacklist═══════")
                               h = ""
                               for i in set["ban"]:
                                 h = me.getContact(i)
@@ -296,17 +296,17 @@ class OverPoll(object):
                             if set["bot"] == {}:
                               me.sendMessage(to,"Tidak Ada kontak bot")
                             else:
-                              me.sendMessage(to,"═══════botlist═══════")
-                              h = ""
-                              for i in set["bot"]:
-                                h = me.getContact(i)
-                                me.sendContact(to,i)
-                        elif Pbot == "bot":
+                              me.sendMessage(to,"OK")
+                        elif Pbot == "in":
                           if msg._from in OWNER or msg._from in meM:
                             if set["bot"] == {}:
                               me.sendMessage(to,"Tidak Ada kontak bot")
                             else:
                               me.inviteIntoGroup(to,set["bot"])
+                        elif Pbot == "out":
+                          if msg._from in OWNER or msg._from in meM:
+                            if set["bot"] == {}:
+                              me.leaveGroup(to)
                         elif Pbot == "channel":
                             me.sendMessage(to, "Waiting...")
                             search = "PrankBots"
