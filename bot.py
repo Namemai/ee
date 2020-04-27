@@ -15,7 +15,7 @@ import time, random, sys, json, codecs, threading, glob, re, string, os, request
 from googletrans import Translator
 _session = requests.session()
 botStart = time.time()
-OWNER = "u02b175e62fb53fd8547e712148e1d510"
+OWNER = "u7dd3b094df38ef9fa28d313f73455389"
 try:
     with open("temp.json","r",encoding="utf_8_sig") as f:
         set = json.loads(f.read())
@@ -76,7 +76,7 @@ class OverPoll(object):
         if op.type == 0:
             return
         if op.type == 5:
-            icone = ("1","2","3","4","5","6","7","8","9","10","11","12")
+            icone = ("1","2","3","4","5","6","7")
             stgift = random.choice(icone)
             icont = ("2ec7c3ad-2257-4b6d-bf8a-9e676fa18239","eb0949bf-c2ef-4fe1-8bec-149d8a46a44d","03de6834-ffdb-4d87-bcd7-853d3e4ec2ac","29568287-d858-44e7-b254-0558cad97933","25e24851-994d-4636-9463-597387ec7b73","02d85080-6b81-448d-9ecb-b8c72cde3561","eb2f8450-e1ae-4846-940d-bac85cf31244","6c3a8150-58c7-4a87-85e8-617b4ef25daa")
             giftst = random.choice(icont)
